@@ -1,1 +1,7 @@
 .idea/
+*.pyc
+*.jpg
+*.tar.gz
+own_detection/test/
+test/
+
