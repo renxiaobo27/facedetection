@@ -34,10 +34,10 @@ class ObjectDetection():
         self.sess = tf.Session(graph=self.detection_graph)
 
         self.detection_image_tensor = self.detection_graph.get_tensor_by_name('image_tensor:0')
-        self.detection_boxes = self.detection_graph.get_tensor_by_name('detection_boxes:0')
-        self.detection_scores = self.detection_graph.get_tensor_by_name('detection_scores:0')
-        self.detection_classes = self.detection_graph.get_tensor_by_name('detection_classes:0')
-        self.detection_num_detections = self.detection_graph.get_tensor_by_name('num_detections:0')
+        # self.detection_boxes = self.detection_graph.get_tensor_by_name('detection_boxes:0')
+        # self.detection_scores = self.detection_graph.get_tensor_by_name('detection_scores:0')
+        # self.detection_classes = self.detection_graph.get_tensor_by_name('detection_classes:0')
+        # self.detection_num_detections = self.detection_graph.get_tensor_by_name('num_detections:0')
 
     def _load_map(self):
         self.label_map = label_map_util.load_labelmap(self.path_label)
@@ -106,6 +106,7 @@ def main():
     object = ObjectDetection(model_name='frozen_inference_graph.pb',model_folder='../ssd_mobilenet_v1_coco_11_06_2017',path_labels=PATH_TO_LABELS,num_classes=20)
 
     for i in xrange(5):
+
         object.detect_objects(img)
 
 if __name__ =='__main__':
