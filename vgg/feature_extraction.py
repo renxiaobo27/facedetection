@@ -21,7 +21,7 @@ def plotNNFilter(units):
 #feature extraction based on pre-trained model
 if __name__ =='__main__':
     img_path='t.jpg'
-    vgg_model_path = 'imagenet-vgg-verydeep-19.mat'
+    vgg_model_path = '/home/tcl-admin/Documents/rxb/fast-style-transfer/data/imagenet-vgg-verydeep-19.mat'
     img = get_img('t.jpg',(256,256,3)).astype(np.float32)
     shape = (1,) + img.shape
 
