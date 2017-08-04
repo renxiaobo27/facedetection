@@ -33,6 +33,7 @@ def parse_arguments(argv):
 
     #setting for detection
     parser.add_argument('--model_folder', type=str, help='path where put the pre-trained model', default='../ssd_mobilenet_v1_coco_11_06_2017')
+    #parser.add_argument('--model_folder', type=str, help='path where put the pre-trained model',default='/home/tcl-admin/Downloads/ssd_inception_v2_coco_11_06_2017')
     parser.add_argument('--model_name', type=str, help='pre-trained model name',
                         default='frozen_inference_graph.pb')
 
@@ -43,7 +44,7 @@ def parse_arguments(argv):
 class Manager():
 
     def __init__(self,video_srouce,qsize,mode,width,height):
-
+        video_srouce = "/home/tcl-admin/Downloads/pets2006_1.avi"
         self.video_capture = cv2.VideoCapture(video_srouce)
         self.video_capture.set(3, width)
         self.video_capture.set(4, height)
